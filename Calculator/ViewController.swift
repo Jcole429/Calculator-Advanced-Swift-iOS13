@@ -28,6 +28,10 @@ class ViewController: UIViewController {
             if isFinishedTypingNumber {
                 displayLabel.text = numValue
                 isFinishedTypingNumber = false
+            } else if numValue == "." {
+                if !displayLabel.text!.contains(".") {
+                    displayLabel.text?.append(numValue)
+                }
             } else {
                 displayLabel.text?.append(numValue)
             }
